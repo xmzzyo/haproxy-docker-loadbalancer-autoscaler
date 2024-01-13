@@ -3,7 +3,7 @@ from pyhaproxy.render import Render
 import pyhaproxy.config as config
 import os
 
-CONFIG_PATH = '/etc/haproxy/haproxy.cfg'
+CONFIG_PATH = './haproxy.cfg'
 
 SERVICE_PORT = '5000'
 
