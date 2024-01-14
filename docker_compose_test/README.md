@@ -1,4 +1,9 @@
 
+requirements.txt:
+prometheus-client
+docker
+
+
 start service before nginx
 
 restart nginx after rescaling
