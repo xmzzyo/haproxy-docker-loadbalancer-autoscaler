@@ -28,7 +28,7 @@ class ContainerHelper:
             num_containers_to_create = count - len(running_containers)
             for i in range(num_containers_to_create):
                 container = self.client.containers.run(
-                    image=IMAGE_NAME, ports={'5000/tcp': 5000}, detach=True)
+                    image=IMAGE_NAME, detach=True)
 
         # If number of running containers is greater than desried count, then stop containers to match desired count
         elif(len(running_containers) > count):

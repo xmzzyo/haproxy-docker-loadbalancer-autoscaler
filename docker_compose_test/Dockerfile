@@ -1,5 +1,5 @@
 # Dockerfile
-FROM python:3.8
+FROM python:3.8-alpine
 
 WORKDIR /app
 
@@ -11,4 +11,4 @@ RUN pip install -r requirements.txt
 COPY . .
 
 # Use Gunicorn as the server
-CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:5000", "app:app"]
+CMD ["python", "-w", "4", "-b", "0.0.0.0:5678", "app:app"]

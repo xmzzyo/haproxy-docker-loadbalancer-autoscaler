@@ -10,5 +10,5 @@ def get():
     return jsonify(host=socket.gethostname(),message='Hello')
 
 if __name__ == '__main__':
-    http_port = os.getenv(port_key,5000)
+    http_port = os.getenv(port_key,5678)
     app.run(host='0.0.0.0', debug=False, port=http_port)

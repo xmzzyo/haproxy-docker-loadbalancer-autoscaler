@@ -5,7 +5,7 @@ import os
 
 CONFIG_PATH = './haproxy.cfg'
 
-SERVICE_PORT = '5000'
+SERVICE_PORT = '5678'
 
 BACKEND_NAME = 'flask_backend'
 
