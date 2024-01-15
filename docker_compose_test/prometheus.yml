@@ -1,6 +1,23 @@
-scrape_configs:
-- job_name: cadvisor
+global:
   scrape_interval: 5s
-  static_configs:
-  - targets:
-    - cadvisor:8080
+  evaluation_interval: 5s
+ 
+# 告警配置
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+          # - alertmanager:9093
+ 
+# Load rules once and periodically evaluate them according to the global 'evaluation_interval'.
+rule_files:
+  # - "first_rules.yml"
+  # - "second_rules.yml"
+ 
+# 被监控端配置
+scrape_configs:
+  - job_name: "cadvisor"           # job表示分组，通过job_name定义组名，给组员打上标签方便管理
+    # metrics_path defaults to '/metrics'# 默认采集路径/metrics
+    # scheme defaults to 'http'.         # 默认采集方式为http         
+    static_configs:                     
+      - targets: ["cadvisor:8080"]   # targets表示被监控端instances
